@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  rs-server:
+    build:
+      context: ./rsServer
+      dockerfile: Dockerfile
+  rs-http-proxy:
+    build:
+      context: ./rsHttpProxy
+      dockerfile: Dockerfile
+    depends_on:
+      - rs-server
